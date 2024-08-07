@@ -37,3 +37,5 @@ app.get("/", (req, res) => {
 app.get("/total_clientes", (req, res) => {
   res.send("Total de clientes: " + clientes.length);
 });
+
+app.get("/clientes/:id", (req, res) => {});
