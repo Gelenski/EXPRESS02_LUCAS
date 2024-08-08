@@ -38,4 +38,12 @@ app.get("/total_clientes", (req, res) => {
   res.send("Total de clientes: " + clientes.length);
 });
 
-app.get("/clientes/:id", (req, res) => {});
+app.get("/clientes/:id", (req, res) => {
+  const cliente = clientes.find((c) => c.id === parseInt(req.params.id));
+  if (!cliente) {
+    res.status(404).send("Cliente não encontrado.");
+  }
+  res.send(
+    `Cliente: ${cliente.nome} | Telefone: ${cliente.telefone} | Email: ${cliente.email}.`
+  );
+});
