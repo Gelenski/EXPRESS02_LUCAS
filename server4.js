@@ -27,6 +27,12 @@ const clientes = [
     telefone: "444444444",
     email: "lucas.gelenski@gmail.com",
   },
+  {
+    id: 5,
+    nome: "Carlos",
+    telefone: "555555555",
+    email: "carlos.silva@outlook.com",
+  },
 ];
 
 // * Rotas
@@ -35,7 +41,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/total_clientes", (req, res) => {
-  res.send("Total de clientes: " + clientes.length);
+  res.send("Total de clientes: " + clientes.length + ".");
 });
 
 app.get("/clientes/:id", (req, res) => {
